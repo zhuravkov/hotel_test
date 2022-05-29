@@ -2,22 +2,39 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import style from './App.module.css';
-import bg_img from './assets/images/Rectangle_32.png'
+
+import phone_img from './assets/images/header_phone.svg'
+
 
 function App() {
   return (
     <div className={style.App}>
-        <div className={style.header__container}>
-          <div className={style.header__top}>
-            Лого и ссылки
+      <div className={style.header__container}>
+        <div className={style.header__top}>
+          <div className={style.header__top__logo}>
+            logo
           </div>
-          <div className={style.header__center}>
-            CENTER
+          <div className={style.header__top__links}>
+            <a href="#">Преимущества</a>
+            <a href="#">О нас</a>
+            <a href="#">Инфраструктура</a>
+            <a href="#">Номера</a>
+            <a href="#">Отзывы</a>
+            <a href="#">Контакты</a>
           </div>
-          <div className={style.header__bottom}>
-            bottom
+          <div className={style.header__top__phone}>
+            <p>8 (918) 49-46-001</p>
+            <img src={phone_img} alt="" />
           </div>
+          
         </div>
+        <div className={style.header__center}>
+          CENTER
+        </div>
+        <div className={style.header__bottom}>
+          bottom
+        </div>
+      </div>
 
 
         <div className={style.find__block}>
