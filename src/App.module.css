@@ -1,0 +1,24 @@
+.App {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: aquamarine;
+}
+
+
+
+.header__container {
+  background: url(./assets/images/Rectangle_32.png);
+  padding: 0px 10%;
+  height: 100vh;
+  max-height: 1007px;
+  display: flex;
+  flex-flow: column wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.find__block {
+  padding: 0px 10%;
+  height: 587px;
+  background: linear-gradient(90deg, #6967CE 17.39%, #1CADD0 88.15%);
+}
