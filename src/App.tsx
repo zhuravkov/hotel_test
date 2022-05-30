@@ -25,12 +25,21 @@ function App() {
           <div className={style.header__top__phone}>
             <p>8 (918) 49-46-001</p>
             <img src={phone_img} alt="" />
-          </div>
-          
-        </div>
-        <div className={style.header__center}>
-          CENTER
-        </div>
+            </div>
+
+              </div>
+              <div className={style.header__center}>
+                  <div className={style.header__center__text_block}>
+                      <p className={style.header__center__text_block_1}>Курортный отель</p>
+                      <p className={style.header__center__text_block_2}>«Пляжный»</p>
+                      <p className={style.header__center__text_block_3}>Незабываемый отдых в Анапе на первой линии от 2500 ₽</p>
+                  </div>
+                  <div className={style.header__center__btn_block}>
+                      <button >Расчет стоимости</button>
+                      <button>Бронирование</button>
+                      <p>Акция действует до 31 мая!</p>
+                  </div>
+              </div>
         <div className={style.header__bottom}>
           bottom
         </div>

@@ -35,6 +35,15 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/**
+ * Reset button styles.
+ */
+ button {
+    padding: 0;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+  }
 /*--------------------*/
 
 
@@ -47,21 +56,29 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 
 
+
+
 .header__container {
   background: url(./assets/images/Rectangle_32.png);
-  padding: 0px 10%;
+  padding: 0px 20%;
   height: 100vh;
   max-height: 1007px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 1340px ) {
+    .header__container {
+        padding: 0px 2%;
+    }
+}
+
 
 
 .header__top {
   display: grid;
-  padding: 20px;
-  grid-template-columns: 2fr 8fr auto;
+  padding-top: 20px;
+  grid-template-columns: 1fr auto auto;
   justify-items:center;
   align-items: center;
   gap: 1rem;
@@ -86,6 +103,12 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
   justify-self: end;
   gap: 1rem;
   margin-right: 40px;
+}
+
+@media (max-width: 770px ) {
+    .header__top__links {
+        display: none;
+    }
 }
 
 .header__top__links a {
@@ -116,12 +139,69 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 
 
+.header__center__text_block_1 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 49px;
+/* identical to box height */
 
 
+color: #FFFFFF;
+}
+
+.header__center__text_block_2 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 67px;
+line-height: 82px;
+/* identical to box height */
+
+text-transform: uppercase;
+
+background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(90deg, #6967CE 17.39%, #1CADD0 88.15%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.header__center__text_block_3 {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+/* identical to box height */
+color: #FFFFFF;
+}
+
+.header__center__btn_block {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
 
 
+.header__center__btn_block button{
 
+    /* переопределение стилей для ссылок */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  
+    /* небольшие вертикальные отступы */
+    margin: 2px 0;border: 1px solid;
 
+/*рамка */ 
+    
+    border-radius: 70px; 
+    border: 3px solid transparent; 
+    background: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%) border-box; /*3*/
+    /* для установки размеров используем паддинги*/ 
+    padding: 25px 80px;
+}
 
 
 
@@ -134,7 +214,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
   justify-items:center;
   align-items: center;
 }
-
+@media (max-width: 1340px ) {
+    .find__block {
+        padding: 0px 2%;
+    }
+}
 
 .find__block__left {
   max-width: 502px;
