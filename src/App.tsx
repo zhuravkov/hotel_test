@@ -32,16 +32,25 @@ function App() {
                   <div className={style.header__center__text_block}>
                       <p className={style.header__center__text_block_1}>Курортный отель</p>
                       <p className={style.header__center__text_block_2}>«Пляжный»</p>
-                      <p className={style.header__center__text_block_3}>Незабываемый отдых в Анапе на первой линии от 2500 ₽</p>
+                      <p className={style.header__center__text_block_3}>Незабываемый отдых в Анапе на первой линии <span>от 2500 ₽</span></p>
                   </div>
                   <div className={style.header__center__btn_block}>
-                      <button >Расчет стоимости</button>
-                      <button>Бронирование</button>
-                      <p>Акция действует до 31 мая!</p>
-                  </div>
-              </div>
+                      <button className={style.header__center__btn_block_1}>Расчет стоимости</button>
+            <button className={style.header__center__btn_block_2}>Бронирование</button>
+            <p>Акция действует до 31 мая!</p>
+          </div>
+        </div>
         <div className={style.header__bottom}>
-          bottom
+          <div className={style.header__bottom__scroll_down}>
+            Листайте ниже
+          </div>
+          <div className={style.header__bottom__adress}>
+            <div>
+              <p>Мы находимся:</p>
+            <p>Анапа, Пионерский проспект 5</p>
+            </div>
+            
+          </div>
         </div>
       </div>
 
