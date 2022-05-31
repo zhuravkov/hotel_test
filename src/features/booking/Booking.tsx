@@ -1,30 +1,46 @@
+import { Field, Form, Formik } from 'formik';
 import styles from './Booking.module.css';
+
+
 
 export const Booking = () => {
 
     return (
         <div className={styles.Booking_container}>
             <div className={styles.Booking_container__exit}></div>
-            <div className={styles.Booking_container__wrap}>
-                <div className={styles.Booking_container__fields}>
-                    <h2>Бронирование</h2>
-                    <div>Заезд-отъезд</div>
-                    <div>Кол-во взрослых</div>
-                    <div>Кол-во детей</div>
-                    <div>Возраст детей</div>
-                    <div>Ваше имя</div>
-                    <div>Ваш телефон</div>
+            <Formik
+                initialValues={{ date: '', adult: '', childeren: '', child_age: '', name: '', phone: '', toggle: false }}
 
-                </div>
-                <div className={styles.Booking_container__checkbox}>
-                    <input type="checkbox" value="newsletter"></input>
-                    <label htmlFor="subscribeNews">Вы даете согласие на обработку своих персональных данных</label>
-                </div>
-                <div>
-                    <button>Отправить</button>
-                </div>
-                
-            </div>
+                onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                        alert(JSON.stringify(values, null, 2));
+                        setSubmitting(false);
+                    }, 400);
+                }}
+            >
+                {({ isSubmitting }) => (
+                    <Form>
+                        <div className={styles.Booking_container__fields}>
+                            <h2>Бронирование</h2>
+                            <Field name="date" placeholder="Заезд-отъезд" />
+                            <Field name="adult" placeholder="Кол-во взрослых" />
+                            <Field name="childeren" placeholder="Кол-во детей" />
+                            <Field name="child_age" placeholder="Bозраст детей" />
+                            <Field name="name" placeholder="Ваше имя" />
+                            <Field name="phone" placeholder="Ваш телефон" />
+
+
+                            <label>
+                                <Field type="checkbox" name="toggle" />
+                                Вы даете согласие на обработку своих персональных данных
+                            </label>
+                            <button type="submit" disabled={isSubmitting}>
+                                Отправить
+                            </button>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
         </div>
     );
 }

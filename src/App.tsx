@@ -9,7 +9,7 @@ import phone_img from './assets/images/header_phone.svg'
 function App() {
     return (
         <div className={style.App}>
-                            
+            <Booking />          
             <div className={style.header__container}>
 
                 <div className={style.header__top}>
@@ -40,7 +40,7 @@ function App() {
                             <button className={style.header__center__btn_block_1}>Расчет стоимости</button>
                             <button className={style.header__center__btn_block_2}>Бронирование</button> 
                             <p>Акция действует до 31 мая!</p>
-                            <Booking />
+                          
                         </div> 
                 </div>
         <div className={style.header__bottom}>

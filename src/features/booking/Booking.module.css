@@ -3,9 +3,9 @@
     width: 570px;
     height: 716px;
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: 10px;
-    z-index: 1;
+    z-index: 11;
 }
 .Booking_container__exit {
     content: url('../../assets/images/VectorExit.svg');
@@ -13,17 +13,31 @@
     padding: 20px;
 }
 
-.Booking_container__wrap{
+
+
+.Booking_container__fields {
+
     display: flex;
     margin: auto auto;
     flex-direction: column;
+    margin: 0px 100px;
 
-    min-width:370px ;
-    padding: 0px 40px;
 }
 
+.Booking_container__fields h2 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 109.9%;      
+   color: #060606;
+   text-align: center;
+   margin-bottom: 30px;
+}
 
-.Booking_container__fields div {
+.Booking_container__fields > input {
+
+
     background-color: #F5E6CB;
     border-radius: 65px;
     font-family: 'Open Sans';
@@ -34,22 +48,26 @@
     color: rgba(0, 0, 0, 0.71);
     min-height: 49px;
     min-width: 400px;
-    margin: 15px;
+    margin-bottom: 15px;
     padding: 20px;
 }
-.Booking_container__fields h2 {
+
+.Booking_container__fields > label {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
-    line-height: 109.9%;      
-   color: #060606;
-   text-align: center;
+    font-size: 13px;
+    line-height: 144.5%;
+    color: #969696;
+    display: flex;
 }
-.Booking_container__checkbox {
-    margin: 30px auto;
+.Booking_container__fields > label input{
+    margin: 10px;
 }
+
+
 .Booking_container button {
+    margin-top: 15px;
     background: #E8B467;
     border: 1px solid #E8B467;
     border-radius: 65px;
