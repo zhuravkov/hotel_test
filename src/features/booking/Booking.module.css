@@ -1,0 +1,64 @@
+.Booking_container {
+    background: url('../../assets/images/Maskgroup.png');
+    width: 570px;
+    height: 716px;
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    z-index: 1;
+}
+.Booking_container__exit {
+    content: url('../../assets/images/VectorExit.svg');
+    margin-left: auto;
+    padding: 20px;
+}
+
+.Booking_container__wrap{
+    display: flex;
+    margin: auto auto;
+    flex-direction: column;
+
+    min-width:370px ;
+    padding: 0px 40px;
+}
+
+
+.Booking_container__fields div {
+    background-color: #F5E6CB;
+    border-radius: 65px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.71);
+    min-height: 49px;
+    min-width: 400px;
+    margin: 15px;
+    padding: 20px;
+}
+.Booking_container__fields h2 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 109.9%;      
+   color: #060606;
+   text-align: center;
+}
+.Booking_container__checkbox {
+    margin: 30px auto;
+}
+.Booking_container button {
+    background: #E8B467;
+    border: 1px solid #E8B467;
+    border-radius: 65px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: #FFFFFF;
+    width:176px;
+    height: 49px;
+}
