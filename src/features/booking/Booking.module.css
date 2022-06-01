@@ -21,6 +21,7 @@
     margin: auto auto;
     flex-direction: column;
     margin: 0px 100px;
+    gap: 1rem;
 
 }
 
@@ -35,8 +36,13 @@
    margin-bottom: 30px;
 }
 
-.Booking_container__fields > input {
-
+.Booking_container__fields__custom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Booking_container__fields > input,
+.Booking_container__fields__custom  {
 
     background-color: #F5E6CB;
     border-radius: 65px;
@@ -47,9 +53,8 @@
     line-height: 150%;
     color: rgba(0, 0, 0, 0.71);
     min-height: 49px;
-    min-width: 400px;
-    margin-bottom: 15px;
-    padding: 20px;
+    min-width: 400px;  
+    padding: 10px 15px;  
 }
 
 .Booking_container__fields > label {
@@ -66,7 +71,7 @@
 }
 
 
-.Booking_container button {
+.Booking_container__fields>button {
     margin-top: 15px;
     background: #E8B467;
     border: 1px solid #E8B467;
@@ -79,4 +84,53 @@
     color: #FFFFFF;
     width:176px;
     height: 49px;
+}
+
+
+
+
+
+
+/* 
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+/* not necessary*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.quantity_block {
+  font-size: 20px;
+}
+.quantity_arrow_minus,
+.quantity_arrow_plus {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 12px;
+  width: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius:50% ;
+}
+.quantity_num {
+  font-size: 20px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  outline: none;
+  width: 40px;
+  text-align: center;
+  background: transparent;
 }
