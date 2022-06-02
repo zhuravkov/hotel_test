@@ -1,31 +1,40 @@
-.Booking_container {
+.booking_container {
     background: url('../../assets/images/Maskgroup.png');
-    width: 570px;
+    min-width: 570px;
     height: 716px;
     position: absolute;
     top: 5%;
     right: 10px;
     z-index: 11;
+    cursor: default;
+    /* Выезд сверху */
+    animation: ani 2s forwards;
 }
-.Booking_container__exit {
+/* Выезд сверху */
+@keyframes ani {
+    100% {transform: translateX(0%);}
+    0% {transform: translateY(-100%);}
+  }
+
+/* Крестик закрыть */
+.booking_container__exit {
     content: url('../../assets/images/VectorExit.svg');
     margin-left: auto;
     padding: 20px;
 }
 
-
-
-.Booking_container__fields {
-
+/* Wrapper on form */
+.booking_container__wrapper {
     display: flex;
-    margin: auto auto;
     flex-direction: column;
-    margin: 0px 100px;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
-
+    margin: 0 10%;
 }
 
-.Booking_container__fields h2 {
+/* Броннирование*/
+.booking_container__wrapper h2 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -33,17 +42,11 @@
     line-height: 109.9%;      
    color: #060606;
    text-align: center;
-   margin-bottom: 30px;
+   margin-bottom: 20px;
 }
 
-.Booking_container__fields__custom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.Booking_container__fields > input,
-.Booking_container__fields__custom  {
-
+/* Поля ФОРМЫ*/
+.booking_container__wrapper>div {
     background-color: #F5E6CB;
     border-radius: 65px;
     font-family: 'Open Sans';
@@ -52,26 +55,90 @@
     font-size: 14px;
     line-height: 150%;
     color: rgba(0, 0, 0, 0.71);
-    min-height: 49px;
-    min-width: 400px;  
-    padding: 10px 15px;  
+    /* min-height: 49px;
+    min-width: 400px;   */
+    padding: 0px 15px;  
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.Booking_container__fields > label {
+/* Inputs Fields */
+.booking_container__wrapper>div>input,
+.booking_container__fields__date>input {
+    background: transparent;
+    width: 100%;
+}
+
+/* ДАТЫ */
+.booking_container__fields__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* СЧЁТЧИКИ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+} 
+
+/* not necessary*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.quantity_block {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.quantity_arrow_minus,
+.quantity_arrow_plus {
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  border-radius: 50%;
+  width: 30px; 
+  height: 30px;
+}
+.quantity_num {
+  font-size: 20px;
+  padding: 10px 10px;
+  outline: none;
+  width: 40px;
+  text-align: center;
+  background: transparent;
+}
+
+/* СОГЛАСИЕ */
+.booking_container__wrapper span {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 144.5%;
     color: #969696;
-    display: flex;
 }
-.Booking_container__fields > label input{
+.booking_container__wrapper input{
     margin: 10px;
 }
 
 
-.Booking_container__fields>button {
+/* ОТПРАВИТЬ */
+.booking_container__wrapper>button {
     margin-top: 15px;
     background: #E8B467;
     border: 1px solid #E8B467;
@@ -84,53 +151,13 @@
     color: #FFFFFF;
     width:176px;
     height: 49px;
+    align-self: start;
 }
 
-
-
-
-
-
-/* 
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
+/* ERRORS */
+.booking__error {
+    color: red !important;
 }
-input[type="number"] {
-  -moz-appearance: textfield;
-} */
-
-/* not necessary*/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.quantity_block {
-  font-size: 20px;
-}
-.quantity_arrow_minus,
-.quantity_arrow_plus {
-  cursor: pointer;
-  font-size: 20px;
-  padding: 5px 12px;
-  width: 40px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius:50% ;
-}
-.quantity_num {
-  font-size: 20px;
-  padding: 10px 10px;
-  border-radius: 4px;
-  outline: none;
-  width: 40px;
-  text-align: center;
-  background: transparent;
+.booking__error::placeholder {
+    color: red !important;
 }

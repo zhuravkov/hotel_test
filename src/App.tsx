@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import { Booking } from './features/booking/Booking';
 import style from './App.module.css';
@@ -7,9 +7,18 @@ import phone_img from './assets/images/header_phone.svg'
 
 
 function App() {
+
+    const [booking, setBooking] = useState(false)
+
+    // Для возможного расширения при смене состояния
+    const bookingOnOff = (a:boolean) => {
+        setBooking(a)}
+
+
     return (
         <div className={style.App}>
-            <Booking />          
+            
+            {booking&&<Booking bookingOnOff={bookingOnOff} /> }      
             <div className={style.header__container}>
 
                 <div className={style.header__top}>
@@ -38,7 +47,7 @@ function App() {
                         </div>
                         <div className={style.header__center__btn_block}>
                             <button className={style.header__center__btn_block_1}>Расчет стоимости</button>
-                            <button className={style.header__center__btn_block_2}>Бронирование</button> 
+                            <button className={style.header__center__btn_block_2} onClick= {()=> bookingOnOff(true) }>Бронирование</button> 
                             <p>Акция действует до 31 мая!</p>
                           
                         </div> 
