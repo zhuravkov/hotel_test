@@ -56,6 +56,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 
+
+
 .header__container {
   background: url(./assets/images/Rectangle_32.png);
   padding: 0px 20%;
@@ -64,13 +66,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: 'Montserrat';
 }
-@media (max-width: 1340px ) {
+@media (max-width: 1380px ) {
     .header__container {
         padding: 0px 2%;
     }
 }
+
 
 
 .header__top {
@@ -84,6 +86,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 .header__top__logo {
   justify-self: start;
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
@@ -110,6 +113,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 .header__top__links a {
   color: #42426A;
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -123,6 +127,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 .header__top__phone p {
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -136,6 +141,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /* HEADER CENTER */
 
 .header__center__text_block_1 {
+font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
 font-size: 40px;
@@ -144,6 +150,7 @@ color: #FFFFFF;
 }
 
 .header__center__text_block_2 {
+font-family: 'Montserrat';
 font-style: normal;
 font-weight: 700;
 font-size: 67px;
@@ -155,6 +162,7 @@ background-clip: text;
 }
 
 .header__center__text_block_3 {
+    font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
 font-size: 26px;
@@ -191,6 +199,7 @@ margin: 30px 0 ;
   /* the radius */
 
   /* text*/
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -228,6 +237,7 @@ margin: 30px 0 ;
   background-image: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%);
   box-shadow: 0px 15px 25px rgba(249, 159, 64, 0.4);
   /* text*/
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -239,6 +249,7 @@ margin: 30px 0 ;
 
 
 .header__center__btn_block p {
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -305,6 +316,7 @@ margin: 30px 0 ;
 
 .header__bottom__scroll_down {
   background: rgba(255, 255, 255, 0.22);
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 300;
   font-size: 15px;
@@ -344,6 +356,9 @@ margin: 30px 0 ;
  
   .header__bottom__adress{width: 100%;}
 }
+
+
+
 
 
 .find__block {

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import logo from './logo.svg';
 import { Booking } from './features/booking/Booking';
 import style from './App.module.css';
 
 import phone_img from './assets/images/header_phone.svg'
-import { BestRooms } from './features/bestRooms/BestRooms';
 
 
 function App() {
@@ -16,11 +16,13 @@ function App() {
     setBooking(a)
   }
 
+
     return (
         <div className={style.App}>
             
             { booking&&<Booking bookingOnOff={bookingOnOff} /> }
             
+
             <div className={style.header__container}>
 
                 <div className={style.header__top}>
@@ -73,12 +75,14 @@ function App() {
             Получите подборку лучших номеров по выгодной цене
           </div>
           <div className={style.find__block__right}>
-            <BestRooms/>
+            Search componrnt
           </div>
         </div>
     </div>
   );
 }
+
+
 
 
 

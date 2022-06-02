@@ -1,0 +1,97 @@
+.bestRooms_wraper,
+.bestRooms_form>div  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 370px ; 
+}
+.bestRooms_form>div>div>input,
+.bestRooms_form__1stepButton,
+.bestRooms_form__date {
+    width: 370px;
+    height: 60px;
+    padding: 0px auto;
+    background: #FFFFFF;
+    border-radius: 70px;
+}
+
+.bestRooms_form input {
+    padding-left: 20px;
+
+}
+
+.bestRooms_form__1stepButton {
+    background: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%);
+    box-shadow: 0px 15px 25px rgba(249, 159, 64, 0.4);
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.bestRooms_wraper>span{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+color: #FFFFFF;
+}
+
+.bestRooms_form__1stepButton>button{
+    width: 100%;
+}
+
+/* ДАТЫ */
+.bestRooms_form__date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 20px;
+}
+
+/* Buttons */
+
+.bestRooms_form__buttons_group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.bestRooms_form__buttons_group button {
+    width: 182px;
+    height: 70px;
+    border-radius: 70px;
+}
+.bestRooms_form__buttons_group> button:first-child {
+    border: 1px solid #FFFFFF;
+    filter: drop-shadow(0px 15px 25px rgba(249, 159, 64, 0.4));
+}
+
+.bestRooms_form__buttons_group button:last-child {
+    background: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%);
+    box-shadow: 0px 15px 25px rgba(249, 159, 64, 0.4);
+}
+
+h2 {
+    max-width: 502px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 55px;
+    color: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%);
+    text-align: center;
+    color: rgba(254, 169, 40, 1);
+}

@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, FieldProps, Form, Formik, FormikProps } from 'formik';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import styles from './Booking.module.css';
 
 
@@ -9,11 +9,17 @@ type PropsType = {
 
 export const Booking: FC<PropsType> = (props) => {
 
+    const [bookingSuccess, setBookingSuccess] = useState(false)
+
+
     return (
         <div className={styles.booking_container}>
+
+            
             <div onClick= {()=> props.bookingOnOff(false)} className={styles.booking_container__exit}></div>
             <Formik
-                initialValues={{ arrival_date: '', departure_date:'', adult: 1, childeren: 0, child_age: '', client_name: '', phone: '', agreement: false }}
+                initialValues={{ arrival_date: '', departure_date:'', adult: 1, 
+                childeren: 0, child_age: '', client_name: '', phone: '', agreement: false }}
 
                 
                 validate={values => {
@@ -38,16 +44,25 @@ export const Booking: FC<PropsType> = (props) => {
 
 
                 onSubmit={(values, { setSubmitting }) => {
+                    // В консоли имитация запроса на сервер
+                    console.log(`Payloud на сервер ====>>>\n ${JSON.stringify(values, null, 2)}`);
+                    setBookingSuccess(true)
+
                     setTimeout(() => {
-                        alert(`Payloud на сервер ====>>>\n ${JSON.stringify(values, null, 2)}`);
-                        setSubmitting(false);
-                    }, 400);
+                        setBookingSuccess(false)
+                        props.bookingOnOff(false)
+                    setSubmitting(false);
+                    }, 5000);
+
+                    
                 }}
             >
                 {(  props: FormikProps<any> ,) => (
                     <Form>
                         <div className= {styles.booking_container__wrapper}>
-                            <h2>Бронирование</h2>
+                        
+                            {bookingSuccess ? <h2>Заявка отправлена</h2> : <h2>Бронирование</h2> }
+                            
 
                             {/* Изменил поле данное в макете для правильной обработки дат в 
                             UI и Сервере разделил дату заезда и выезда */}
