@@ -133,9 +133,9 @@ const CustomInputComponent: FC<FieldProps> = ({
     ...props
   }) => (
         <div className={styles.quantity_block}>
-            <button className={styles.quantity_arrow_minus} onClick={() => {setFieldValue(`${field.name}`, field.value-1)}} type="button"> - </button>
+            <button className={styles.quantity_arrow_minus} disabled={field.value===0} onClick={() => {setFieldValue(`${field.name}`, field.value-1)}} type="button"> - </button>
             <input className={styles.quantity_num} type="number" readOnly {...field} {...props} />
-            <button className={styles.quantity_arrow_plus} onClick={() => {setFieldValue(`${field.name}`, field.value+1)}} type="button"> + </button>
+            <button className={styles.quantity_arrow_plus} disabled={field.value===8} onClick={() => {setFieldValue(`${field.name}`, field.value+1)}} type="button"> + </button>
         </div>
   );
 

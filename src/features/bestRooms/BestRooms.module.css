@@ -6,6 +6,7 @@
     align-items: flex-start;
     gap: 1rem;
     width: 370px ; 
+    cursor: default;
 }
 .bestRooms_form>div>div>input,
 .bestRooms_form__1stepButton,
@@ -94,4 +95,9 @@ h2 {
     color: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%);
     text-align: center;
     color: rgba(254, 169, 40, 1);
+}
+
+/* ERRORS */
+.bestRooms_form_err {
+    color: rgba(254, 169, 40, 1) !important;
 }

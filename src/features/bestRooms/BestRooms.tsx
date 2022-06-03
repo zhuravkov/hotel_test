@@ -75,17 +75,18 @@ export const BestRooms = () => {
                                                 <div>Дата отъезда: </div>
                                                 <Field name="arrival_date" type="date" placeholder="Дата заезда:" />
                                                 </div>
-                                                <ErrorMessage name="arrival_date" component="div" className={styles.bestRooms_form} />
+                                                <ErrorMessage name="arrival_date" component="div" className={styles.bestRooms_form_err} />
                                             </div>
                                             <div>
-                                            <div className={styles.bestRooms_form__date}>
-                                                <div>Дата отъезда:</div>
-                                                <Field name="departure_date" type="date" placeholder="Дата отъезда:" />
-                                                <ErrorMessage name="departure_date" component="div" className={styles.bestRooms_form} />
+                                                <div className={styles.bestRooms_form__date}>
+                                                    <div>Дата отъезда:</div>
+                                                    <Field name="departure_date" type="date" placeholder="Дата отъезда:" />
+                                                </div>
+                                                <ErrorMessage name="departure_date" component="div" className={styles.bestRooms_form_err} />
+
                                             </div>
-                                            </div>
-                                            <div className= {styles.bestRooms_form__1stepButton}>
-                                                <button  type="button" disabled={
+                                            <div className={styles.bestRooms_form__1stepButton}>
+                                                <button type="button" disabled={
                                                     props.errors.departure_date || !props.touched.arrival_date ? true : false}
                                                     onClick={() => setStep(step + 1)}> Далее </button>
                                             </div>
@@ -94,11 +95,11 @@ export const BestRooms = () => {
                                     {step === 2 && <div>
                                         <div>
                                             <Field name="numberOfRooms" placeholder="Укажите кол-во комнат:" />
-                                            <ErrorMessage name="numberOfRooms" component="div" className={styles.bestRooms_form} />
+                                            <ErrorMessage name="numberOfRooms" component="div" className={styles.bestRooms_form_err} />
                                         </div>
                                         <div>
                                             <Field name="numberOfGuests" placeholder="Укажите кол-во гостей:" />
-                                            <ErrorMessage name="numberOfGuests" component="div" className={styles.bestRooms_form} />
+                                            <ErrorMessage name="numberOfGuests" component="div" className={styles.bestRooms_form_err} />
                                         </div>
                                         <div className= {styles.bestRooms_form__buttons_group}>
                                             <button type="button" onClick={() => setStep(step - 1)}> Назад </button>
@@ -110,11 +111,11 @@ export const BestRooms = () => {
                                     {step === 3 && <div>
                                         <div>
                                             <Field name="client_name" placeholder="Ваше имя:" />
-                                            <ErrorMessage name="client_name" component="div" className={styles.bestRooms_form} />
+                                            <ErrorMessage name="client_name" component="div" className={styles.bestRooms_form_err} />
                                         </div>
                                         <div>
                                             <Field name="phone" placeholder="Контактный телефон:" />
-                                            <ErrorMessage name="phone" component="div" className={styles.bestRooms_form} />
+                                            <ErrorMessage name="phone" component="div" className={styles.bestRooms_form_err} />
                                         </div>
                                         <div className= {styles.bestRooms_form__buttons_group}>
                                             <button type="button" onClick={() => setStep(step - 1)}> Назад </button>

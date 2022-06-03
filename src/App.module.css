@@ -374,6 +374,8 @@ margin: 30px 0 ;
   font-weight: 700;
   font-size: 45px;
   line-height: 55px;
+  cursor: default;
+  outline : none;
   
   background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
   linear-gradient(90deg, #6967CE 17.39%, #1CADD0 88.15%);
