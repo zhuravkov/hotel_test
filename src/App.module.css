@@ -78,6 +78,11 @@ button {
   outline: none;
 }
 
+/*-----Убрать каретку кроме инпутов-----*/
+*:not(input) {
+  user-select: none;
+}
+
 /*--------------------*/
 .App {
   max-width: 1920px;
@@ -99,7 +104,7 @@ button {
   padding: 0px 20%;
 }
 
-@media (max-width: 1340px) {
+@media screen and (max-width: 1340px) {
   .header__container {
     padding: 0px 2%;
   }
@@ -187,6 +192,13 @@ button {
   }
 }
 
+@media (max-height: 770px) {
+  .header__center__text_block p:first-child {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
 .header__center__text_block p:nth-child(2) {
   font-weight: 700;
   font-size: 67px;
@@ -205,6 +217,12 @@ button {
 }
 
 @media screen and (max-width: 460px) {
+  .header__center__text_block p:nth-child(2) {
+    font-size: 26px;
+  }
+}
+
+@media (max-height: 770px) {
   .header__center__text_block p:nth-child(2) {
     font-size: 26px;
   }
@@ -236,6 +254,14 @@ button {
   }
 }
 
+@media (max-height: 770px) {
+  .header__center__text_block p:last-child {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 80%;
+  }
+}
+
 .header__center__btn_block {
   display: flex;
   gap: 20px;
@@ -255,6 +281,12 @@ button {
 }
 
 @media screen and (max-width: 770px) {
+  .header__center__btn_block button {
+    padding: 25px 10% !important;
+  }
+}
+
+@media (max-height: 770px) {
   .header__center__btn_block button {
     padding: 25px 10% !important;
   }
@@ -357,6 +389,12 @@ button {
   }
 }
 
+@media (max-height: 770px) {
+  .header__bottom > div:first-child {
+    display: none;
+  }
+}
+
 .header__bottom > div:last-child {
   display: flex;
   justify-content: center;
@@ -373,6 +411,18 @@ button {
 @media screen and (max-width: 460px) {
   .header__bottom > div:last-child {
     width: 100%;
+  }
+}
+
+@media (max-height: 770px) {
+  .header__bottom > div:last-child {
+    margin-left: auto;
+  }
+}
+
+@media (max-height: 460px) {
+  .header__bottom > div:last-child {
+    padding: 10px 5px;
   }
 }
 
@@ -393,6 +443,12 @@ button {
 }
 
 @media (max-width: 770px) {
+  .find__block {
+    display: none;
+  }
+}
+
+@media (max-height: 770px) {
   .find__block {
     display: none;
   }
