@@ -30,12 +30,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage bookingOnOff={bookingOnOff} />} />
-          <Route path='/advantages' element={<Advantages />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/infrastructure' element={<Infrastructure />} />
-          <Route path='/rooms' element={<Rooms />} />
-          <Route path='/reviews' element={<Reviews />} />
-          <Route path='/contacts' element={<Contacts />} />
+          <Route path='advantages' element={<Advantages />} />
+          <Route path='about' element={<About />} />
+          <Route path='infrastructure' element={<Infrastructure />} />
+          <Route path='rooms' element={<Rooms />} />
+          <Route path='reviews' element={<Reviews />} />
+          <Route path='contacts' element={<Contacts />} />
         </Route>
       </Routes>
     </div>
