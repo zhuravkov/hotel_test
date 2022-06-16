@@ -1,0 +1,186 @@
+.header__container {
+  background: url(../../assets/images/Rectangle_32.png);
+  height: 100vh;
+  max-height: 1007px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 20%;
+}
+
+@media screen and (max-width: 1340px) {
+  .header__container {
+    padding: 0px 2%;
+  }
+}
+
+.header__top {
+  display: grid;
+  padding-top: 20px;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__top__logo {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 25px;
+  text-transform: uppercase;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(90deg, #6967CE 17.39%, #1CADD0 88.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header__top__links {
+  display: flex;
+  justify-self: end;
+  gap: 1rem;
+  justify-self: end;
+}
+
+.header__top__links a {
+  color: #42426A;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@media screen and (max-width: 770px) {
+  .header__top__links {
+    display: none;
+  }
+}
+
+.active_navlink {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(113.2deg, #FD636B 10.25%, #FFD200 98.71%);
+  border-image-slice: 1;
+}
+
+.header__top__phone {
+  display: flex;
+  justify-self: end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header__top__phone p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+  color: #42426A;
+}
+
+.header__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 770px) {
+  .header__bottom {
+    justify-content: end;
+  }
+}
+
+.header__bottom > div:first-child {
+  background: rgba(255, 255, 255, 0.22);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+  padding: 30px;
+  border-radius: 0px 0px 5px 5px;
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+}
+
+@media screen and (max-width: 770px) {
+  .header__bottom > div:first-child {
+    display: none;
+  }
+}
+
+@media (max-height: 770px) {
+  .header__bottom > div:first-child {
+    display: none;
+  }
+}
+
+.header__bottom > div:last-child {
+  display: flex;
+  justify-content: center;
+  background: #FFFFFF;
+  border-radius: 5px 5px 0px 0px;
+  padding: 46px 33px;
+}
+
+.header__bottom > div:last-child:before {
+  content: url("../../assets/images/icons8_google_maps1.svg");
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 460px) {
+  .header__bottom > div:last-child {
+    width: 100%;
+  }
+}
+
+@media (max-height: 770px) {
+  .header__bottom > div:last-child {
+    margin-left: auto;
+  }
+}
+
+@media (max-height: 460px) {
+  .header__bottom > div:last-child {
+    padding: 10px 5px;
+  }
+}
+
+.find__block {
+  height: 587px;
+  background: linear-gradient(90deg, #6967CE 17.39%, #1CADD0 88.15%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0px 20%;
+}
+
+@media (max-width: 1340px) {
+  .find__block {
+    padding: 0px 2%;
+  }
+}
+
+@media (max-width: 770px) {
+  .find__block {
+    display: none;
+  }
+}
+
+@media (max-height: 770px) {
+  .find__block {
+    display: none;
+  }
+}
+
+.find__block > div:first-child {
+  max-width: 502px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 55px;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(90deg, #6967CE 17.39%, #1CADD0 88.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
