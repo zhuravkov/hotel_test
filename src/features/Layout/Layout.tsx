@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom"
 import { BestRooms } from "../bestRooms/BestRooms";
 import style from './Layout.module.css';
 import phone_img from '../../assets/images/header_phone.svg'
-import { NavLink } from "react-router-dom";
+import { HeaderLinks } from "../headerLinks/HeaderLinks";
 
 
 
@@ -16,14 +16,9 @@ export const Layout = () => {
             <div className={style.header__top__logo}>
               <Link to="/">logo</Link>
             </div>
-            <div className={style.header__top__links}>
-              <NavLink to="/advantages" className={({ isActive }) =>isActive ? style.active_navlink : undefined} >Преимущества</NavLink>
-              <NavLink to="/about" className={({ isActive }) =>isActive ? style.active_navlink : undefined}>О нас</NavLink>
-              <NavLink to="/infrastructure" className={({ isActive }) =>isActive ? style.active_navlink : undefined}>Инфраструктура</NavLink>
-              <NavLink to="/rooms"className={({ isActive }) =>isActive ? style.active_navlink : undefined}>Номера</NavLink>
-              <NavLink to="/reviews" className={({ isActive }) =>isActive ? style.active_navlink : undefined}>Отзывы</NavLink>
-              <NavLink to="/contacts"className={({ isActive }) =>isActive ? style.active_navlink : undefined}>Контакты</NavLink>
-            </div>
+
+            <HeaderLinks />
+
             <div className={style.header__top__phone}>
               <p>8 (918) 49-46-001</p>
               <img src={phone_img} alt="" />

@@ -19,6 +19,7 @@
 
 @media screen and (max-width: 460px) {
   .header__center__text_block p:first-child {
+    margin-top: 50px;
     font-size: 18px;
     line-height: 22px;
   }
@@ -101,6 +102,12 @@
   flex-wrap: wrap;
   padding: 20px 0px;
   font-style: normal;
+}
+
+@media (max-height: 460px) {
+  .header__center__btn_block {
+    padding: 5px 0px;
+  }
 }
 
 .header__center__btn_block button {
