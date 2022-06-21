@@ -1,6 +1,7 @@
 .header__container {
   background: url(../../assets/images/Rectangle_32.png);
   height: 100vh;
+  height: calc(var(--self_vh, 1vh) * 100);
   max-height: 1007px;
   display: flex;
   flex-direction: column;
@@ -103,8 +104,6 @@
 @media screen and (max-width: 460px) {
   .header__bottom > div:last-child {
     width: 100%;
-    margin-bottom: 5%;
-    border-radius: 5px;
   }
 }
 

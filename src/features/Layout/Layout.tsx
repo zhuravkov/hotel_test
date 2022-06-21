@@ -4,14 +4,16 @@ import style from './Layout.module.css';
 import phone_img from '../../assets/images/header_phone.svg'
 import { HeaderLinks } from "../headerLinks/HeaderLinks";
 
-
+// for mobile viewport
+import {useScreenDimensions} from "use-screen-dimensions";
 
 export const Layout = () => {
-
+  const { width, height } = useScreenDimensions();
   return (
     <>
       <header>
-        <div className={style.header__container}>
+        <div className={style.header__container} 
+        style={{'--self_vh':  `${height* 0.01}px`} as React.CSSProperties}>
           <div className={style.header__top}>
             <div className={style.header__top__logo}>
               <Link to="/">logo</Link>

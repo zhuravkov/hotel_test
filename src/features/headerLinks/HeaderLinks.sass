@@ -45,13 +45,13 @@ $size_460: 460px
       font-style: normal
       font-weight: 400
       font-size: 15px
-      line-height: 1.5    
+      line-height: 2    
       
       
       @media screen and (max-width: $size_770)
         color: #FFF
         font-size: 20px
-        line-height: 1
+        line-height: 0.5
       @media (max-height: $size_460 )
         font-size: 15px
  
@@ -92,8 +92,9 @@ $size_460: 460px
   position: absolute
   height: 4px
   width: 30px
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1)
+  transition: transform 1000ms cubic-bezier(0.23, 1, 0.32, 1)
   border-radius: 2px
+  
 
 .menu_button::before 
   content: ''
@@ -108,6 +109,7 @@ $size_460: 460px
   transform: rotate(405deg)
 
 
+
 .menu_toggle:checked + .menu_button_container .menu_button 
   background: rgba(255, 255, 255, 0)
 
@@ -115,4 +117,5 @@ $size_460: 460px
 .menu_toggle:checked + .menu_button_container .menu_button::after 
   margin-top: 0px
   transform: rotate(-405deg)
+
 

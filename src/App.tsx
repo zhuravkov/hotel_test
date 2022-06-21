@@ -11,10 +11,14 @@ import { Rooms } from './features/rooms/Rooms';
 import { Reviews } from './features/reviews/Reviews';
 import { Contacts } from './features/contacts/Contacts';
 import { Layout } from './features/Layout/Layout';
-
-
+// for mobile viewport
+import {useScreenDimensions} from "use-screen-dimensions";
 
 function App() {
+
+  // get window size
+  const { width, height } = useScreenDimensions();
+
 
   const [booking, setBooking] = useState(false)
 
@@ -25,7 +29,7 @@ function App() {
   }
 
   return (
-    <div className={style.App}>
+    <div className={style.App} style={{'--vh': height} as React.CSSProperties}>
       {booking && <Booking bookingOnOff={bookingOnOff} />}
       <Routes>
         <Route path='/' element={<Layout />}>
