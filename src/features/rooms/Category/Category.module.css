@@ -1,0 +1,8 @@
+.additionalImages {
+  display: flex;
+}
+
+.additionalImages img {
+  height: 400px;
+  width: 400px;
+}

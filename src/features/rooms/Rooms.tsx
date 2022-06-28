@@ -2,8 +2,9 @@ import Carousel from 'nuka-carousel';
 import style from './Rooms.module.css';
 import { useScreenDimensions } from "use-screen-dimensions";
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { sagaActions, selectRoomsCategoty } from './RoomsSlice';
+import { sagaActions, selectRoomsCategoty, setCurrentCutegory } from './RoomsSlice';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Rooms = () => {
   let dispatch = useAppDispatch()
@@ -42,8 +43,9 @@ export const Rooms = () => {
       >
         {categories.map(p =>
           <div  key={p.id} className={`${style.rooms_caroucsel__item} ${style.rooms_caroucsel__item_1}`}>
-            <div>{p.title}</div>
-            <img src={p.image} alt={p.image} />
+            <Link to={`${p.id}`} onClick={()=>dispatch(setCurrentCutegory(p.id))}><div>{p.title}</div></Link>
+            {/* <div>{p.title}</div> */}
+            <img src={`http://localhost:8000${p.image}`} alt={p.image} />
           </div>
         )
         }         

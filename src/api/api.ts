@@ -4,6 +4,7 @@ import { CategoryResponse } from '../features/rooms/RoomsSlice';
 
 const instance = axios.create({
     baseURL: 'http://localhost:8000/api/',
+    // baseURL: 'http://project-django.ru/api/',
 });
 
 

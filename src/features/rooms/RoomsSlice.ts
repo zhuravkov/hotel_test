@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
+import { RootState } from '../../app/store';
 import { roomsAPI } from '../../api/api';
 import { call, takeEvery, put } from "redux-saga/effects";
 import { AxiosError } from 'axios';
@@ -15,6 +15,10 @@ export type RoomsCategotyType = {
     title: string
     content: string
     image: string
+    additionalImg: [{
+      id: number
+      image: string
+    }]
 }
 
 
@@ -22,13 +26,15 @@ type RoomsState = {
     roomsCategory: RoomsCategotyType[]
     isLoading: boolean
     error: string
+    currentCutegory: number|null
 }
 
 
 const initialState: RoomsState = {
   roomsCategory: [],
   isLoading: false,
-  error: ''
+  error: '',
+  currentCutegory: null
 };
 
 
@@ -50,18 +56,28 @@ const RoomsSlice = createSlice({
         FetchingError: (state, action: PayloadAction<string>) => {
             state.isLoading = false
             state.error = action.payload
-        }
+        },
+        setCurrentCutegory: (state,action:PayloadAction<number>) => {
+          state.currentCutegory = action.payload
+      },
     }
 });
 
 
 // Export AC
-export const {roomsCategoryFetching, setRoomsCategories, FetchingError } = RoomsSlice.actions;
+export const {roomsCategoryFetching, setRoomsCategories, FetchingError,setCurrentCutegory } = RoomsSlice.actions;
 
 
 
 // selecting posts from origins 
 export const selectRoomsCategoty = (state: RootState) =>  state.roomsReducer.roomsCategory
+export const currentCategoty = (state: RootState) =>{
+  if (state.roomsReducer.currentCutegory){
+    let currentCat = state.roomsReducer.roomsCategory.find(p => p.id===state.roomsReducer.currentCutegory)
+    return currentCat
+  }
+}
+
 
 
 export type CategoryResponse = {

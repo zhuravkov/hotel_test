@@ -13,6 +13,7 @@ import { Contacts } from './features/contacts/Contacts';
 import { Layout } from './features/Layout/Layout';
 // for mobile viewport
 import {useScreenDimensions} from "use-screen-dimensions";
+import { Category } from './features/rooms/Category/Category';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='infrastructure' element={<Infrastructure />} />
           <Route path='rooms' element={<Rooms />} />
+          <Route path={'/rooms/:CategoryId'} element={<Category  />} />
           <Route path='reviews' element={<Reviews />} />
           <Route path='contacts' element={<Contacts />} />
         </Route>
