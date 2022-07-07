@@ -1,14 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import { roomsAPI } from '../../api/api';
-import { call, takeEvery, put } from "redux-saga/effects";
-import { AxiosError } from 'axios';
-
-export const sagaActions = {
-  FETCH_ROOMS_CATEGORY_DATA: "FETCH_ROOMS_CATEGORY_DATA"
-  };
-
-
 
 export type RoomsCategotyType = {
     id: number
@@ -68,7 +59,6 @@ const RoomsSlice = createSlice({
 export const {roomsCategoryFetching, setRoomsCategories, FetchingError,setCurrentCutegory } = RoomsSlice.actions;
 
 
-
 // selecting posts from origins 
 export const selectRoomsCategoty = (state: RootState) =>  state.roomsReducer.roomsCategory
 export const currentCategoty = (state: RootState) =>{
@@ -78,28 +68,5 @@ export const currentCategoty = (state: RootState) =>{
   }
 }
 
-
-
-export type CategoryResponse = {
-  data: RoomsCategotyType[]
-  resultCode: string
-  messages: string
-}
-// SAGA GET DATA
-export function* fetchRoomsCategories() {
-    try {
-        yield put (roomsCategoryFetching())
-        let result: CategoryResponse = yield call(roomsAPI.getCategory);
-        yield put(setRoomsCategories(result.data));
-    } catch (e: any) {
-        let error: AxiosError = e
-        yield put(FetchingError(error.message));
-    }
-}
-
-
-export function* RoomsSaga() {
-    yield takeEvery(sagaActions.FETCH_ROOMS_CATEGORY_DATA , fetchRoomsCategories);
-  }
  
 export default RoomsSlice.reducer;

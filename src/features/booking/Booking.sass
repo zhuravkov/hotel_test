@@ -1,25 +1,32 @@
 .booking_container 
     background: url('../../assets/images/Maskgroup.png')
-    width: 570px
-    height: 716px
+
+    height: auto
+
     position: absolute
     top: 5%
     right: 10px
     z-index: 11
     cursor: default
+    padding: 20px
+    border-radius: 30px
     /* Выезд сверху */
     animation: ani 2s forwards
     @media (max-width: 1380px )
-      max-width: 100%
       top: 0%
       right: 0px
     @media (max-width: 460px )
       width: 100%
-    @media (max-height: 770px )
-      height: 100%
+      padding: 5px
+      height: auto
+      padding: 5px
+    @media (max-height: 760px )
+      width: 100%
+      height: auto
     @media (max-height: 460px )
       width: 100%
-      height: 716px
+      height: auto
+
 
 @keyframes ani 
     100% {transform: translateX(0%)}
@@ -29,17 +36,19 @@
 .booking_container__exit 
     content: url('../../assets/images/VectorExit.svg')
     margin-left: auto
-    padding: 20px
+    padding: 20px 20px 0px 0px
+
+
 
 /* Wrapper on form */
 .booking_container__wrapper
   display: flex
   flex-direction: column
-  justify-content: center
+  justify-content: top
   align-items: center
-  gap: 1rem
   margin: 0 10%
-  height: 100%
+  top: 20px
+
   font-family: 'Open Sans'
   font-style: normal
 
@@ -63,20 +72,26 @@
     line-height: 150%
     color: rgba(0, 0, 0, 0.71)
     min-width: 400px
+    margin-top: 10px
     padding: 0px 15px 
     width: 100%
     min-height: 50px
     display: flex
     justify-content: space-between
     align-items: center
-    @media (max-width: 770px )
-      flex-wrap: wrap
+    font-size: 20px
     @media (max-width: 460px )
       min-width: 200px
-    input
+      font-size: 14px
+    input,  select
       background: transparent
       width: 100%
-  
+      font-size: 20px
+      @media (max-width: 460px )
+        font-size: 14px
+    
+  label
+    margin-top: 10px
   /* СОГЛАСИЕ */
   label>span
     font-weight: 400
@@ -107,6 +122,15 @@
   justify-content: space-between
   align-items: center
   gap: 5px
+  input
+    text-align: right
+  div
+    font-size: 20px
+    @media (max-width: 460px )
+      font-size: 14px
+
+
+
 
 /* СЧЁТЧИКИ */
 input[type="number"]::-webkit-inner-spin-button,
@@ -141,6 +165,24 @@ input[type="number"]
 /* ERRORS */
 .booking__error 
   color: red !important
+  width: 100%
+  text-align: center
   &::placeholder 
     color: red !important
+
+.booking_container__wrapper .booking__success
+  background-color: #c1f79d
+  flex-direction: column
+  text-align: center
+  align-items: center
+  justify-content: center
+  padding: 30px
+.booking_container__wrapper .booking__server_error
+  background-color: #fa986b
+  flex-direction: column
+  text-align: center
+  align-items: center
+  justify-content: center
+  padding: 30px
+
 

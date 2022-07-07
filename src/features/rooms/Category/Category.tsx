@@ -2,9 +2,10 @@
 import style from './Category.module.css';
 
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { currentCategoty, sagaActions, setCurrentCutegory } from '../RoomsSlice';
+import { currentCategoty, setCurrentCutegory } from '../RoomsSlice';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { sagaActions } from '../../../app/sagas';
 
 
 

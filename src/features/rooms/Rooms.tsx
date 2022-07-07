@@ -2,9 +2,10 @@ import Carousel from 'nuka-carousel';
 import style from './Rooms.module.css';
 import { useScreenDimensions } from "use-screen-dimensions";
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { sagaActions, selectRoomsCategoty, setCurrentCutegory } from './RoomsSlice';
+import { selectRoomsCategoty, setCurrentCutegory } from './RoomsSlice';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { sagaActions } from '../../app/sagas';
 
 export const Rooms = () => {
   let dispatch = useAppDispatch()
@@ -13,9 +14,9 @@ export const Rooms = () => {
 
   const { width } = useScreenDimensions();
 
-  useEffect(() => {
-    dispatch({ type: sagaActions.FETCH_ROOMS_CATEGORY_DATA })
-    }, [])
+  // useEffect(() => {
+  //   dispatch({ type: sagaActions.FETCH_ROOMS_CATEGORY_DATA })
+  //   }, [])
 
 
   let slidesToShow

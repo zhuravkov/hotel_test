@@ -1,0 +1,169 @@
+@charset "UTF-8";
+.calculate_container {
+  background: url("../../assets/images/Maskgroup.png");
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 5%;
+  left: 10px;
+  z-index: 12;
+  cursor: default;
+  padding: 20px;
+  border-radius: 30px;
+  /* Выезд сверху */
+  animation: ani 2s forwards;
+}
+
+@media (max-width: 1380px) {
+  .calculate_container {
+    top: 0%;
+    left: 0px;
+  }
+}
+
+@media (max-width: 460px) {
+  .calculate_container {
+    width: 100%;
+    left: 0px;
+    padding: 5px;
+  }
+}
+
+@media (max-height: 770px) {
+  .calculate_container {
+    height: 100%;
+    left: 0px;
+    padding: 5px;
+  }
+}
+
+@media (max-height: 460px) {
+  .calculate_container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes ani {
+  100% {
+    transform: translateX(0%);
+  }
+  0% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Крестик закрыть */
+.calculate_container__exit {
+  content: url("../../assets/images/VectorExit.svg");
+  margin-left: auto;
+  padding: 20px;
+}
+
+/* Wrapper on form */
+.calculate_container__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 10%;
+  height: 100%;
+  font-family: 'Open Sans';
+  font-style: normal;
+  /* Рассчёт*/
+  /* ОТПРАВИТЬ */
+}
+
+.calculate_container__wrapper h2 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 109.9%;
+  color: #060606;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1380px) {
+  .calculate_container__wrapper h2 {
+    margin-bottom: 0px;
+    /* Поля ФОРМЫ*/
+  }
+}
+
+.calculate_container__wrapper > div {
+  background-color: #F5E6CB;
+  border-radius: 65px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.71);
+  min-width: 400px;
+  padding: 0px 15px;
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 770px) {
+  .calculate_container__wrapper > div {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 460px) {
+  .calculate_container__wrapper > div {
+    min-width: 200px;
+  }
+}
+
+.calculate_container__wrapper > div input, .calculate_container__wrapper > div select {
+  background: transparent;
+  width: 100%;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
+
+.calculate_container__wrapper > div span {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
+
+@media (max-width: 770px) {
+  .calculate_container__wrapper > div span {
+    font-size: 14px;
+  }
+}
+
+.calculate_container__wrapper > div:nth-child(-n+4) {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calculate_container__wrapper > button {
+  margin-top: 15px;
+  background: #E8B467;
+  border: 1px solid #E8B467;
+  border-radius: 65px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #FFFFFF;
+  width: 176px;
+  height: 49px;
+}
+
+/* ERRORS */
+.calc__error {
+  color: red !important;
+  text-align: center;
+  width: 100%;
+}
