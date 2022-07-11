@@ -17,6 +17,7 @@ import { Category } from './features/rooms/Category/Category';
 import { Calculate } from './features/calculate/Calculate';
 import { useAppDispatch } from './app/hooks';
 import { sagaActions } from './app/sagas';
+import { NoMatchRouts } from './features/NoMatchRouts/NoMatchRouts';
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='infrastructure' element={<Infrastructure />} />
           <Route path='rooms' element={<Rooms />} />
-          <Route path={'/rooms/:CategoryId'} element={<Category  />} />
+          <Route path={'/rooms/:category_slug'} element={<Category  />} />
           <Route path='reviews' element={<Reviews />} />
           <Route path='contacts' element={<Contacts />} />
         </Route>

@@ -44,7 +44,7 @@ export const Rooms = () => {
       >
         {categories.map(p =>
           <div  key={p.id} className={`${style.rooms_caroucsel__item} ${style.rooms_caroucsel__item_1}`}>
-            <Link to={`${p.id}`} onClick={()=>dispatch(setCurrentCutegory(p.id))}><div>{p.title}</div></Link>
+            <Link to={`${p.category_slug}`} onClick={()=>dispatch(setCurrentCutegory(p.category_slug))}><div>{p.title}</div></Link>
             {/* <div>{p.title}</div> */}
             <img src={`http://localhost:8000${p.image}`} alt={p.image} />
           </div>

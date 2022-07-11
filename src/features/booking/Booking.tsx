@@ -13,9 +13,7 @@ type PropsType = {
 
 export const Booking: FC<PropsType> = (props) => {
 
-    const [bookingSuccess, setBookingSuccess] = useState(false)
     let categories = useAppSelector(selectRoomsCategoty)
-
     const [error, setError] = useState<AxiosError>();
     const [errorOption, setErrorOption] = useState<string>();
     const [isLoaded, setIsLoaded] = useState(false);
@@ -77,10 +75,10 @@ export const Booking: FC<PropsType> = (props) => {
           roomsAPI.postOrder(values)
           .then(
             (result) => {
+              setError(undefined)
               if (result.resultCode===0){
                 setIsLoaded(true)
                 setItems(result.data)
-                setError(undefined)
                 setErrorOption(undefined)
               }
               if (result.resultCode===1){
@@ -111,11 +109,11 @@ export const Booking: FC<PropsType> = (props) => {
             <div className={styles.booking_container__wrapper}>
               <h2>Бронирование</h2>
               
-              {error && <div>{error.message}</div>}
-              {errorOption && <div className={styles.booking__server_error}>{errorOption}</div>}
+              {error && <div className={`${styles.booking__message} ${styles.booking__server_error}`}>{error.message}</div>}
+              {errorOption && <div className={`${styles.booking__message} ${styles.booking__server_error}`}>{errorOption}</div>}
 
               {isLoaded 
-              ? <div className={styles.booking__success}>
+              ? <div className={`${styles.booking__message} ${styles.booking__success}`}>
                 <span>№ брони {items?.id}</span>
                 <span>Забронирован: {items?.order_name}</span>
                 <span>Количество дней: {items?.days}</span>

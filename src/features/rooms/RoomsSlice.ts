@@ -6,6 +6,7 @@ export type RoomsCategotyType = {
     title: string
     content: string
     image: string
+    category_slug:string
     additionalImg: [{
       id: number
       image: string
@@ -17,7 +18,7 @@ type RoomsState = {
     roomsCategory: RoomsCategotyType[]
     isLoading: boolean
     error: string
-    currentCutegory: number|null
+    currentCutegory: string
 }
 
 
@@ -25,7 +26,7 @@ const initialState: RoomsState = {
   roomsCategory: [],
   isLoading: false,
   error: '',
-  currentCutegory: null
+  currentCutegory: ''
 };
 
 
@@ -48,7 +49,8 @@ const RoomsSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
-        setCurrentCutegory: (state,action:PayloadAction<number>) => {
+        setCurrentCutegory: (state,action:PayloadAction<string>) => {
+
           state.currentCutegory = action.payload
       },
     }
@@ -63,9 +65,10 @@ export const {roomsCategoryFetching, setRoomsCategories, FetchingError,setCurren
 export const selectRoomsCategoty = (state: RootState) =>  state.roomsReducer.roomsCategory
 export const currentCategoty = (state: RootState) =>{
   if (state.roomsReducer.currentCutegory){
-    let currentCat = state.roomsReducer.roomsCategory.find(p => p.id===state.roomsReducer.currentCutegory)
-    return currentCat
+    let currentCat = state.roomsReducer.roomsCategory.find(p => p.category_slug===state.roomsReducer.currentCutegory)
+    return currentCat  
   }
+
 }
 
  
