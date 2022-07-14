@@ -51,9 +51,11 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='infrastructure' element={<Infrastructure />} />
           <Route path='rooms' element={<Rooms />} />
-          <Route path={'/rooms/:category_slug'} element={<Category  />} />
+          <Route path={'/rooms/:category_slug'} element={<Category bookingOnOff={bookingOnOff}
+                                                                    calculateOnOff={setCalculate} />} />
           <Route path='reviews' element={<Reviews />} />
           <Route path='contacts' element={<Contacts />} />
+          <Route path='*' element={<NoMatchRouts />} />
         </Route>
       </Routes>
     </div>

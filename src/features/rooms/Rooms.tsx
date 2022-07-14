@@ -3,9 +3,8 @@ import style from './Rooms.module.css';
 import { useScreenDimensions } from "use-screen-dimensions";
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectRoomsCategoty, setCurrentCutegory } from './RoomsSlice';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { sagaActions } from '../../app/sagas';
+
 
 export const Rooms = () => {
   let dispatch = useAppDispatch()
@@ -13,10 +12,6 @@ export const Rooms = () => {
 
 
   const { width } = useScreenDimensions();
-
-  // useEffect(() => {
-  //   dispatch({ type: sagaActions.FETCH_ROOMS_CATEGORY_DATA })
-  //   }, [])
 
 
   let slidesToShow
@@ -46,7 +41,7 @@ export const Rooms = () => {
           <div  key={p.id} className={`${style.rooms_caroucsel__item} ${style.rooms_caroucsel__item_1}`}>
             <Link to={`${p.category_slug}`} onClick={()=>dispatch(setCurrentCutegory(p.category_slug))}><div>{p.title}</div></Link>
             {/* <div>{p.title}</div> */}
-            <img src={`http://localhost:8000${p.image}`} alt={p.image} />
+            <img src={`${p.image}`} alt={p.image} />
           </div>
         )
         }         

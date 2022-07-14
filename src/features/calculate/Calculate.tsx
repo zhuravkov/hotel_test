@@ -4,7 +4,7 @@ import { FC, useState } from 'react';
 import { roomsAPI } from '../../api/api';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { CalculateResponse, sagaActions } from '../../app/sagas';
-import { selectRoomsCategoty } from '../rooms/RoomsSlice';
+import { currentCategoty, selectRoomsCategoty } from '../rooms/RoomsSlice';
 import styles from './Calculate.module.css';
 
 
@@ -14,27 +14,20 @@ type PropsType = {
 
 export const Calculate: FC<PropsType> = (props) => {
 
-  let dispatch = useAppDispatch()
 
   let categories = useAppSelector(selectRoomsCategoty)
-
-
-
-
+  let category = useAppSelector(currentCategoty)
   const [error, setError] = useState<AxiosError>();
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState<CalculateResponse>();
 
-
+  
 
   return (
     <div className={styles.calculate_container}>
-
-
       <div onClick={() => props.calculateOnOff(false)} className={styles.calculate_container__exit}></div>
-
       <Formik
-        initialValues={{ arrival_date: '', departure_date: '', category: '1' }}
+        initialValues={{ arrival_date: '', departure_date: '', category: category ? category.id: 1 }}
         validate={values => {
           const errors: { [field: string]: string } = {};
           if (!values.arrival_date) {
@@ -49,7 +42,6 @@ export const Calculate: FC<PropsType> = (props) => {
       return errors;
          
     }}
-
 
         onSubmit={(values, { setSubmitting }) => {
           // Положил значения полей в тело запроса, ини ушли в сагу ЗАПРОС ЧЕРЕЗ САГУ
@@ -86,6 +78,11 @@ export const Calculate: FC<PropsType> = (props) => {
                 <Field name="departure_date" type="date" />
                 <ErrorMessage name="departure_date" component="div" className={styles.calc__error} />
               </div>
+              {category? <div>
+                <Field name="category" value={category.id} component="div">Категория: {category.title}
+                </Field>
+              </div>
+              : 
               <div>
                 <Field name="category" component="select">
                   {categories.map(p =>
@@ -93,9 +90,10 @@ export const Calculate: FC<PropsType> = (props) => {
                   )}
                 </Field>
               </div>
+              
+              }
               <button type="submit" disabled={props.isSubmitting}>Расчитать</button>
-              
-              
+
               {isLoaded && <>
                 <div>
                   <span>Стоимость:</span>
@@ -113,9 +111,7 @@ export const Calculate: FC<PropsType> = (props) => {
               }
               {error && <div>{error.message}</div>}
             </div>
-            
 
-            
           </Form>
         )}
       </Formik>

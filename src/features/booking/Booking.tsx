@@ -3,8 +3,9 @@ import { ErrorMessage, Field, FieldProps, Form, Formik, FormikProps } from 'form
 import { FC, useState } from 'react';
 import { BookingResponseData, roomsAPI } from '../../api/api';
 import { useAppSelector } from '../../app/hooks';
-import { selectRoomsCategoty } from '../rooms/RoomsSlice';
+import { currentCategoty, selectRoomsCategoty } from '../rooms/RoomsSlice';
 import styles from './Booking.module.css';
+
 
 
 type PropsType = {
@@ -14,6 +15,9 @@ type PropsType = {
 export const Booking: FC<PropsType> = (props) => {
 
     let categories = useAppSelector(selectRoomsCategoty)
+// Looks current categery
+    let category = useAppSelector(currentCategoty)
+
     const [error, setError] = useState<AxiosError>();
     const [errorOption, setErrorOption] = useState<string>();
     const [isLoaded, setIsLoaded] = useState(false);
@@ -29,7 +33,7 @@ export const Booking: FC<PropsType> = (props) => {
       
       <Formik
         initialValues={{
-          category: '1', arrival_date: '', departure_date: '', adult: 1,
+          category: category ? category.id: 1, arrival_date: '', departure_date: '', adult: 1,
           childeren: 0, child_age: '', client_name: '', phone: '', agreement: false
         }}
 
@@ -125,6 +129,11 @@ export const Booking: FC<PropsType> = (props) => {
               <>
 
               
+              {category? <div>
+                <Field name="category" value={category.id} component="div">Категория: {category.title}
+                </Field>
+              </div>
+              : 
               <div>
                 <Field name="category" component="select">
                   {categories.map(p =>
@@ -132,6 +141,8 @@ export const Booking: FC<PropsType> = (props) => {
                   )}
                 </Field>
               </div>
+              
+              }
               
               <div className={styles.booking_container__fields__date}>
                 <div>Заезд: </div>

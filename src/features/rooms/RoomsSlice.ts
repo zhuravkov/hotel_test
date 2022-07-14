@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
+
 export type RoomsCategotyType = {
     id: number
     title: string
     content: string
     image: string
     category_slug:string
+    price: number
     additionalImg: [{
       id: number
       image: string
@@ -52,6 +54,7 @@ const RoomsSlice = createSlice({
         setCurrentCutegory: (state,action:PayloadAction<string>) => {
 
           state.currentCutegory = action.payload
+
       },
     }
 });
@@ -68,7 +71,13 @@ export const currentCategoty = (state: RootState) =>{
     let currentCat = state.roomsReducer.roomsCategory.find(p => p.category_slug===state.roomsReducer.currentCutegory)
     return currentCat  
   }
-
+  else {return undefined}
+}
+export const selectMinPriceCategoty = (state: RootState) => {
+  if (state.roomsReducer.roomsCategory.length>0){
+    let minPrice = state.roomsReducer.roomsCategory.slice().sort((a,b) => a.price - b.price)[0][`price`];
+  return minPrice
+  }
 }
 
  

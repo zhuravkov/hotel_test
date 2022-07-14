@@ -4,16 +4,20 @@ import style from './Category.module.css';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { currentCategoty, selectRoomsCategoty, setCurrentCutegory } from '../RoomsSlice';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { sagaActions } from '../../../app/sagas';
+import { CalcBookingBtn } from '../../CalcBookingBtn/CalcBookingBtn';
 
 
+type PropsType = {
+  bookingOnOff: (a:boolean) => void
+  calculateOnOff: (a:boolean) => void
+}
 
-
-export const Category = () => {
+export const Category: FC<PropsType>  = (props) => {
 
   let categories = useAppSelector(selectRoomsCategoty)
-  let category = useAppSelector(currentCategoty)
+  const category = useAppSelector(currentCategoty)
 
   let dispatch = useAppDispatch()
 
@@ -21,9 +25,17 @@ export const Category = () => {
   useEffect(() => {
     if (!categories) dispatch({ type: sagaActions.FETCH_ROOMS_CATEGORY_DATA })
     if (!category) { category_slug && dispatch(setCurrentCutegory(category_slug))}
-    }, [category])
+    }, [category, categories, category_slug,dispatch ])
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(setCurrentCutegory(''))}
+  }, [dispatch])
+
   return (
     <div >
+      <CalcBookingBtn calculateOnOff = {props.calculateOnOff}
+                      bookingOnOff = {props.bookingOnOff} />
       <div>{category?.id}</div>
       <div>{category?.content}</div>
       <div>{category?.title}</div>
@@ -31,7 +43,7 @@ export const Category = () => {
       <div className={style.additionalImages}>
         {category?.additionalImg.map(p =>
           <div key={p.id}>
-            <img src={`http://localhost:8000${p.image}`} alt={p.image} />
+            <img src={p.image} alt={p.image} />
           </div>
         )
         }

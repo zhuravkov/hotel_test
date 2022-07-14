@@ -17,7 +17,7 @@ export type CategoryResponse = {
 }
 
 export type CalculatePayloud = {
-  category: string
+  category: number
   arrival_date: string
   departure_date: string
 }
