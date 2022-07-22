@@ -85,7 +85,7 @@ color: #FFFFFF;
     box-shadow: 0px 15px 25px rgba(249, 159, 64, 0.4);
 }
 
-h2 {
+.bestRooms_wraper h2 {
     max-width: 502px;
     font-family: 'Montserrat';
     font-style: normal;

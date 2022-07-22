@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { FC, useEffect } from 'react';
 import { sagaActions } from '../../../app/sagas';
 import { CalcBookingBtn } from '../../CalcBookingBtn/CalcBookingBtn';
+import Carousel from 'nuka-carousel';
 
 
 type PropsType = {
@@ -33,21 +34,70 @@ export const Category: FC<PropsType>  = (props) => {
   }, [dispatch])
 
   return (
-    <div >
-      <CalcBookingBtn calculateOnOff = {props.calculateOnOff}
-                      bookingOnOff = {props.bookingOnOff} />
-      <div>{category?.id}</div>
-      <div>{category?.content}</div>
-      <div>{category?.title}</div>
+    <div className={style.category_wraper}>
+      <div>
+        <h2>{category?.title}</h2>
 
-      <div className={style.additionalImages}>
+
+
+
+
+
+        <div className={style.category_content_wraper}>
+        <input className={style.content_toggle} id="content_toggle" type="checkbox" />
+        <label className={style.menu_button_container} htmlFor="content_toggle">
+          <span>Описание</span>
+          <span className={style.menu_button}></span>
+        </label>
+          <div className={style.category_content}>
+            {category?.content}
+          </div>
+
+
+          
+          
+        </div>
+          
+
+
+
+        <CalcBookingBtn calculateOnOff={props.calculateOnOff}
+          bookingOnOff={props.bookingOnOff} />
+        
+      </div>
+
+      <div className={style.category_caroucsel}>
+        <Carousel
+        wrapAround={true}
+        slidesToShow={1}
+        autoplayInterval={60000}
+        autoplay={true}
+        renderCenterLeftControls={({ previousSlide }) => (
+          <button className={`${style.slider_button} ${style.slider_button__left}`} onClick={previousSlide}></button>
+        )}
+        renderCenterRightControls={({ nextSlide }) => (
+          <button className={`${style.slider_button} ${style.slider_button__right}`} onClick={nextSlide}></button>
+        )}
+
+        // renderBottomCenterControls={null}
+        defaultControlsConfig={{
+          pagingDotsStyle: {
+            fill: 'Moccasin',
+            margin: '20px',
+          }
+        }}
+
+        >
+
         {category?.additionalImg.map(p =>
-          <div key={p.id}>
+          <div key={p.id} className={style.rooms_caroucsel__item}>
             <img src={p.image} alt={p.image} />
           </div>
         )
         }
+
+        </Carousel>
       </div>
-    </div>
+    </div >
   )
 }
